@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FoodBar : MonoBehaviour
+public class SanityBar : MonoBehaviour
 {
     [Header("Resource Settings")]
     public float maxValue = 100f;          // Max bar value
