@@ -3558,6 +3558,9 @@ MonoBehaviour:
   valueText: {fileID: 0}
   onButtonColor: {r: 0, g: 0, b: 0, a: 0}
   offButtonColor: {r: 0, g: 0, b: 0, a: 0}
+  location: 
+  alertHub: {fileID: 0}
+  notified: 0
 --- !u!114 &501460953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4308,7 +4311,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &603070369
 RectTransform:
@@ -6994,6 +6997,9 @@ MonoBehaviour:
   valueText: {fileID: 0}
   onButtonColor: {r: 0, g: 0, b: 0, a: 0}
   offButtonColor: {r: 0, g: 0, b: 0, a: 0}
+  location: 
+  alertHub: {fileID: 0}
+  notified: 0
 --- !u!114 &1242874468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7488,6 +7494,9 @@ MonoBehaviour:
   valueText: {fileID: 0}
   onButtonColor: {r: 0, g: 0, b: 0, a: 0}
   offButtonColor: {r: 0, g: 0, b: 0, a: 0}
+  location: 
+  alertHub: {fileID: 0}
+  notified: 0
 --- !u!114 &1323443791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9937,6 +9946,9 @@ MonoBehaviour:
   valueText: {fileID: 0}
   onButtonColor: {r: 0, g: 0, b: 0, a: 0}
   offButtonColor: {r: 0, g: 0, b: 0, a: 0}
+  location: 
+  alertHub: {fileID: 0}
+  notified: 0
 --- !u!114 &1757641288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11042,7 +11054,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 637, y: -389}
+  m_AnchoredPosition: {x: -698, y: 388}
   m_SizeDelta: {x: 431.2091, y: 172.3064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2026770026
@@ -12070,6 +12082,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 229260883460779762, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 759888622284007524, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
       propertyPath: restoreButton
       value: 
@@ -12279,10 +12295,10 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 797342993}
+  - {fileID: 603070369}
   - {fileID: 1317141729}
   - {fileID: 1872928091}
   - {fileID: 989810222}
   - {fileID: 353792292}
   - {fileID: 283169418}
   - {fileID: 599980082}
-  - {fileID: 603070369}
