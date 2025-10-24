@@ -23,6 +23,10 @@ public class HealthBar : MonoBehaviour
     public Color onButtonColor;
     public Color offButtonColor;
 
+    public string location;
+    public NotifAlerts alertHub;
+    public bool notified = false;
+
 
     private void Start()
     {
@@ -42,26 +46,39 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        // Drain over time
-        if (drainOnStart && currentValue > 0)
+        if (Clock.gameOngoing)
         {
-            currentValue -= drainPerSecond * Time.deltaTime;
-            currentValue = Mathf.Clamp(currentValue, 0, maxValue);
-            UpdateUI();
-        }
+            // Drain over time
+            if (drainOnStart && currentValue > 0)
+            {
+                currentValue -= drainPerSecond * Time.deltaTime;
+                currentValue = Mathf.Clamp(currentValue, 0, maxValue);
+                UpdateUI();
 
-        if (restoreTimer >= restoreCooldown)
-        {
-            Debug.Log(restoreTimer);
-            restoreButton.enabled = true;
-            restoreButton.image.color = onButtonColor;
-        }
-        else
-        {
-            restoreButton.enabled = false;
-            restoreButton.image.color = offButtonColor;
-            restoreTimer += Time.deltaTime;
-            Debug.Log(restoreTimer);
+                //if its running low
+                if (!notified && currentValue / maxValue <= .15f)
+                {
+                    notified = alertHub.HealthAlert(location);
+                }
+                else if (notified && currentValue / maxValue > .15f)
+                {
+                    notified = false;
+                }
+            }
+
+            if (restoreTimer >= restoreCooldown)
+            {
+                Debug.Log(restoreTimer);
+                restoreButton.enabled = true;
+                restoreButton.image.color = onButtonColor;
+            }
+            else
+            {
+                restoreButton.enabled = false;
+                restoreButton.image.color = offButtonColor;
+                restoreTimer += Time.deltaTime;
+                Debug.Log(restoreTimer);
+            }
         }
     }
 
