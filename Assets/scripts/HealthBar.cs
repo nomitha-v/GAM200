@@ -8,7 +8,8 @@ public class HealthBar : MonoBehaviour
     public float currentValue = 50f;       // Starting value
     public float restoreAmount = 25f;      // Amount restored when button is pressed
     public float restoreCooldown = 1f;     // Seconds between restores
-    private float lastRestoreTime = 0f;
+
+    private float restoreTimer;
 
     [Header("Drain Settings")]
     public float drainPerSecond = 1f;      // Amount drained per second
@@ -19,8 +20,14 @@ public class HealthBar : MonoBehaviour
     public Button restoreButton;
     public Text valueText;  // Optional
 
+    public Color onButtonColor;
+    public Color offButtonColor;
+
+
     private void Start()
     {
+        restoreTimer = restoreCooldown;
+        Debug.Log(restoreTimer);
         // Setup slider
         if (resourceSlider != null)
         {
@@ -42,18 +49,29 @@ public class HealthBar : MonoBehaviour
             currentValue = Mathf.Clamp(currentValue, 0, maxValue);
             UpdateUI();
         }
+
+        if (restoreTimer >= restoreCooldown)
+        {
+            Debug.Log(restoreTimer);
+            restoreButton.enabled = true;
+            restoreButton.image.color = onButtonColor;
+        }
+        else
+        {
+            restoreButton.enabled = false;
+            restoreButton.image.color = offButtonColor;
+            restoreTimer += Time.deltaTime;
+            Debug.Log(restoreTimer);
+        }
     }
 
     void RestoreResource()
     {
-        if (Time.time - lastRestoreTime >= restoreCooldown)
-        {
-            currentValue += restoreAmount;
+        currentValue += restoreAmount;
             currentValue = Mathf.Clamp(currentValue, 0, maxValue);
             UpdateUI();
+        restoreTimer = 0;
 
-            lastRestoreTime = Time.time;
-        }
     }
 
     void UpdateUI()
