@@ -291,9 +291,11 @@ MonoBehaviour:
   maxValue: 100
   currentValue: 50
   restoreAmount: 25
-  restoreCooldown: 1
+  restoreCooldown: 3
   drainPerSecond: 1
   drainOnStart: 1
   resourceSlider: {fileID: 1431396961984608364}
   restoreButton: {fileID: 0}
   valueText: {fileID: 0}
+  onButtonColor: {r: 0.47450984, g: 0.6392157, b: 0.5764706, a: 1}
+  offButtonColor: {r: 0.3137255, g: 0.32156864, b: 0.21176472, a: 1}
