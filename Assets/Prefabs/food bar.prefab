@@ -222,6 +222,11 @@ MonoBehaviour:
   resourceSlider: {fileID: 5654526489268185676}
   restoreButton: {fileID: 0}
   valueText: {fileID: 0}
+  onButtonColor: {r: 0.69411767, g: 0.18431373, b: 0.227451, a: 1}
+  offButtonColor: {r: 0.34509805, g: 0.18431373, b: 0.227451, a: 1}
+  location: 
+  alertHub: {fileID: 0}
+  notified: 0
 --- !u!1 &5506135943691865038
 GameObject:
   m_ObjectHideFlags: 0
