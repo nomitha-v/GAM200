@@ -58,6 +58,7 @@ public class Clock : MonoBehaviour
         gameOngoing = false;
         //win screen
         endRoundScreen.gameObject.SetActive(true);
+        SoundManager.PlaySound(SoundType.DAYCOMPLETE);
     }
 
     public void HungerDeath(string animal)
