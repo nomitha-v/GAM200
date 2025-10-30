@@ -10,6 +10,8 @@ public class SanityBar : MonoBehaviour
     public float restoreCooldown = 1f;     // Seconds between restores
     private float lastRestoreTime = 0f;
 
+    private float restoreTimer;
+
     [Header("Drain Settings")]
     public float drainPerSecond = 1f;      // Amount drained per second
     public bool drainOnStart = true;
@@ -19,8 +21,16 @@ public class SanityBar : MonoBehaviour
     public Button restoreButton;
     public Text valueText;  // Optional
 
+    public Color onButtonColor;
+    public Color offButtonColor;
+
+    public string animal;
+    public NotifAlerts alertHub;
+    public bool notified = false;
+
     private void Start()
     {
+        restoreTimer = restoreCooldown;
         // Setup slider
         if (resourceSlider != null)
         {
@@ -35,25 +45,52 @@ public class SanityBar : MonoBehaviour
 
     private void Update()
     {
-        // Drain over time
-        if (drainOnStart && currentValue > 0)
+        if (Clock.gameOngoing)
         {
-            currentValue -= drainPerSecond * Time.deltaTime;
-            currentValue = Mathf.Clamp(currentValue, 0, maxValue);
-            UpdateUI();
+            // Drain over time
+            if (drainOnStart && currentValue > 0)
+            {
+                currentValue -= drainPerSecond * Time.deltaTime;
+                currentValue = Mathf.Clamp(currentValue, 0, maxValue);
+                UpdateUI();
+
+                //if its running low
+                if (!notified && currentValue / maxValue <= .15f)
+                {
+                    notified = alertHub.SanityAlert(animal);
+                }
+                else if (notified && currentValue / maxValue > .15f)
+                {
+                    notified = false;
+                }
+            }
+
+            if (restoreTimer >= restoreCooldown)
+            {
+                restoreButton.enabled = true;
+                restoreButton.image.color = onButtonColor;
+            }
+            else
+            {
+                restoreButton.enabled = false;
+                restoreButton.image.color = offButtonColor;
+                restoreTimer += Time.deltaTime;
+            }
+
+            if(currentValue <= 0)
+            {
+                Clock.Instance.SanityDeath(animal);
+            }
         }
     }
 
     void RestoreResource()
     {
-        if (Time.time - lastRestoreTime >= restoreCooldown)
-        {
-            currentValue += restoreAmount;
-            currentValue = Mathf.Clamp(currentValue, 0, maxValue);
-            UpdateUI();
+        currentValue += restoreAmount;
+        currentValue = Mathf.Clamp(currentValue, 0, maxValue);
+        UpdateUI();
+        restoreTimer = 0;
 
-            lastRestoreTime = Time.time;
-        }
     }
 
     void UpdateUI()

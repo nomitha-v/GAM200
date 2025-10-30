@@ -297,3 +297,8 @@ MonoBehaviour:
   resourceSlider: {fileID: 1197661947271764879}
   restoreButton: {fileID: 0}
   valueText: {fileID: 0}
+  onButtonColor: {r: 0.73333335, g: 0.47058827, b: 0.7058824, a: 1}
+  offButtonColor: {r: 0.4716981, g: 0.36934853, b: 0.46100482, a: 1}
+  location: 
+  alertHub: {fileID: 0}
+  notified: 0

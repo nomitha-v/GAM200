@@ -23,7 +23,7 @@ public class HealthBar : MonoBehaviour
     public Color onButtonColor;
     public Color offButtonColor;
 
-    public string location;
+    public string animal;
     public NotifAlerts alertHub;
     public bool notified = false;
 
@@ -31,7 +31,6 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         restoreTimer = restoreCooldown;
-        Debug.Log(restoreTimer);
         // Setup slider
         if (resourceSlider != null)
         {
@@ -58,7 +57,7 @@ public class HealthBar : MonoBehaviour
                 //if its running low
                 if (!notified && currentValue / maxValue <= .15f)
                 {
-                    notified = alertHub.HealthAlert(location);
+                    notified = alertHub.HealthAlert(animal);
                 }
                 else if (notified && currentValue / maxValue > .15f)
                 {
@@ -68,7 +67,6 @@ public class HealthBar : MonoBehaviour
 
             if (restoreTimer >= restoreCooldown)
             {
-                Debug.Log(restoreTimer);
                 restoreButton.enabled = true;
                 restoreButton.image.color = onButtonColor;
             }
@@ -77,7 +75,11 @@ public class HealthBar : MonoBehaviour
                 restoreButton.enabled = false;
                 restoreButton.image.color = offButtonColor;
                 restoreTimer += Time.deltaTime;
-                Debug.Log(restoreTimer);
+            }
+
+            if (currentValue <= 0)
+            {
+                Clock.Instance.SanityDeath(animal);
             }
         }
     }
