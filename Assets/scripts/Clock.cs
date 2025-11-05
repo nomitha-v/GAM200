@@ -44,7 +44,8 @@ public class Clock : MonoBehaviour
             elapsedTime += Time.deltaTime;
             int min = Mathf.FloorToInt(elapsedTime / 60);
             int sec = Mathf.FloorToInt(elapsedTime % 60);
-            timer.text = string.Format("{0:00}:{1:00}", min, sec);
+            int millisec = Mathf.FloorToInt((elapsedTime*100)%100);
+            timer.text = string.Format("{0:00}:{1:00}:{2:00}", min, sec, millisec);
 
             if (elapsedTime > endTime)
             {
