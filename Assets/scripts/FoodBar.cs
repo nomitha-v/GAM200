@@ -8,7 +8,7 @@ public class FoodBar : MonoBehaviour
     public float maxValue = 100f;          // Max bar value
     public float currentValue = 50f;       // Starting value
     public float restoreAmount = 25f;      // Amount restored when button is pressed
-    private float restoreCooldown = 3f;     // Seconds between restores
+    public float restoreCooldown = 3f;     // Seconds between restores
     private float lastRestoreTime = 0f;
 
     private float restoreTimer;
