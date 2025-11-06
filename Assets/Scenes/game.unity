@@ -19357,7 +19357,7 @@ MonoBehaviour:
   flamingoClip: {fileID: 8300000, guid: 8091f27bac0530c40877b63ae50237fb, type: 3}
   sealClip: {fileID: 8300000, guid: 602171b790b0d24429f77666e4f3b770, type: 3}
   owlClip: {fileID: 8300000, guid: 856cbc373a2bc1345914eb1dca22ecbd, type: 3}
-  volume: 0.69
+  volume: 0.13
 --- !u!82 &2095027113
 AudioSource:
   m_ObjectHideFlags: 0
