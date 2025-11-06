@@ -44,7 +44,9 @@ public class Clock : MonoBehaviour
             elapsedTime += Time.deltaTime;
             int min = Mathf.FloorToInt(elapsedTime / 60);
             int sec = Mathf.FloorToInt(elapsedTime % 60);
-            timer.text = string.Format("{0:00}:{1:00}", min, sec);
+            int millisec = Mathf.FloorToInt((elapsedTime*100)%100);
+            timer.text = string.Format("{0:00}:{1:00}:{2:00}", min, sec, millisec);
+            SoundManager.PlaySound(SoundType.DAYSTART);
 
             if (elapsedTime > endTime)
             {
@@ -58,7 +60,7 @@ public class Clock : MonoBehaviour
         gameOngoing = false;
         //win screen
         endRoundScreen.gameObject.SetActive(true);
-        SoundManager.PlaySound(SoundType.DAYCOMPLETE);
+        SoundManager.PlaySound(SoundType.DAYCOMPLETE); //sound
     }
 
     public void HungerDeath(string animal)

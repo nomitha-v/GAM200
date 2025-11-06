@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class FoodBar : MonoBehaviour
     public float maxValue = 100f;          // Max bar value
     public float currentValue = 50f;       // Starting value
     public float restoreAmount = 25f;      // Amount restored when button is pressed
-    public float restoreCooldown = 1f;     // Seconds between restores
+    public float restoreCooldown = 3f;     // Seconds between restores
     private float lastRestoreTime = 0f;
 
     private float restoreTimer;
@@ -20,6 +21,8 @@ public class FoodBar : MonoBehaviour
     public Slider resourceSlider;
     public Button restoreButton;
     public Text valueText;  // Optional
+
+    public TextMeshProUGUI buttonText;
 
     public Color onButtonColor;
     public Color offButtonColor;
@@ -68,15 +71,17 @@ public class FoodBar : MonoBehaviour
 
             if (restoreTimer >= restoreCooldown)
             {
-                Debug.Log("food button rstores");
                 restoreButton.enabled = true;
                 restoreButton.image.color = onButtonColor;
+                restoreButton.GetComponentInChildren<TextMeshProUGUI>().text = "FOOD";
             }
             else
             {
                 restoreButton.enabled = false;
                 restoreButton.image.color = offButtonColor;
                 restoreTimer += Time.deltaTime;
+                int a = Mathf.FloorToInt(restoreCooldown - restoreTimer);
+                restoreButton.GetComponentInChildren<TextMeshProUGUI>().text = string.Format ("{0}s", a);
             }
 
             if (currentValue <= 0)

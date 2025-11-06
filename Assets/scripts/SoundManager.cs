@@ -1,7 +1,8 @@
 using UnityEngine;
 using System;
-public enum SoundType
+public enum SoundType //sfx
 {
+    DAYSTART,
     DAYCOMPLETE
 }
 
