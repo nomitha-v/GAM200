@@ -7,6 +7,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private Image[] backgrounds;
     [SerializeField] private Sprite activeSprite, inactiveSprite;
     private int activePanel;
+
+    public AmbianceController ambiance;
     private void Start()
     {
         SelectPanel(0);
@@ -18,12 +20,28 @@ public class ButtonManager : MonoBehaviour
         SetPanelsActive(false);
 
         animalPanels[panelIndex].SetActive(true);
+        switch (panelIndex)
+        {
+            case 0: //horse
+                ambiance.HorseAmbiance();
+                break;
+            case 1: //seal
+                ambiance.SealAmbiance();
+                break;
+            case 2: //owl
+                ambiance.OwlAmbiance();
+                break;
+            case 3://flamingo
+                ambiance.FlamingoAmbiance();
+                break;
+
+        }
         backgrounds[activePanel].sprite = activeSprite;
     }
     private void SetPanelsActive(bool state)
     {
         for (int i = 0; i < animalPanels.Length; i++)
-        {
+        { 
             animalPanels[i].SetActive(state);
             if (state == true)
             {
@@ -34,5 +52,10 @@ public class ButtonManager : MonoBehaviour
                 backgrounds[i].sprite = inactiveSprite;
             }
         }
+    }
+
+    void AmbianceAnimalPlay()
+    {
+
     }
 }

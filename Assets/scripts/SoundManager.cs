@@ -3,24 +3,19 @@ using System;
 public enum SoundType //sfx
 {
     DAYSTART,
-    DAYCOMPLETE
+    DAYCOMPLETE,
+    DAYINCOMPLETE
 }
 
-public enum BGM
-{
-    MENU
-}
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] private SoundList[] soundList;
-    [SerializeField] private BGMList[] bgmLists;
 
     static SoundManager instance; //able to call from ANYWHERE
 
     public AudioSource audioSource;
-    public AudioSource bgmSource;
 
 
     private void Awake()
@@ -47,15 +42,7 @@ public class SoundManager : MonoBehaviour
         instance.audioSource.PlayOneShot(randomClip, volume);
     }
 
-    public static void PlayBGM(BGM bgm, float volume = 1)
-    {
-        AudioClip[] clips = instance.bgmLists[(int)bgm].BGMs;
 
-        AudioClip randomClip = clips[UnityEngine.Random.Range(0, clips.Length)];
-
-        instance.bgmSource.PlayOneShot(randomClip, volume);
-
-    }
 
 
 #if UNITY_EDITOR //only applies if youre in the unity editor | to prevent errors?
@@ -68,13 +55,7 @@ public class SoundManager : MonoBehaviour
         {
             soundList[i].name = names[i];
         }
-        //setting names for BGM
-        string[] names2 = Enum.GetNames(typeof(BGM));
-        Array.Resize(ref bgmLists, names2.Length);
-        for (int i = 0; i < bgmLists.Length; i++)
-        {
-            bgmLists[i].name = names2[i];
-        }
+
     }
 #endif
 }
@@ -86,11 +67,4 @@ public struct SoundList
     [SerializeField] public string name;
     [SerializeField] private AudioClip[] sounds;
 
-}
-[Serializable]
-public struct BGMList
-{
-    public AudioClip[] BGMs { get => bgms; }
-    [SerializeField] public string name;
-    [SerializeField] private AudioClip[] bgms;
 }
