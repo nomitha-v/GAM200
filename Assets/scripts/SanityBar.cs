@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -69,12 +70,15 @@ public class SanityBar : MonoBehaviour
             {
                 restoreButton.enabled = true;
                 restoreButton.image.color = onButtonColor;
+                restoreButton.GetComponentInChildren<TextMeshProUGUI>().text = "SANITY";
             }
             else
             {
                 restoreButton.enabled = false;
                 restoreButton.image.color = offButtonColor;
                 restoreTimer += Time.deltaTime;
+                int a = Mathf.FloorToInt(restoreCooldown - restoreTimer);
+                restoreButton.GetComponentInChildren<TextMeshProUGUI>().text = string.Format("{0}s", a);
             }
 
             if(currentValue <= 0)
