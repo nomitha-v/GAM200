@@ -19,7 +19,7 @@ public class ButtonManager : MonoBehaviour
 
         SetPanelsActive(false);
 
-        animalPanels[panelIndex].SetActive(true);
+        animalPanels[panelIndex].gameObject.SetActive(true);
         switch (panelIndex)
         {
             case 0: //horse

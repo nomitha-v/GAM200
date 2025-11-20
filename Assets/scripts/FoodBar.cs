@@ -50,6 +50,7 @@ public class FoodBar : MonoBehaviour
     {
         if (Clock.gameOngoing)
         {
+            Debug.Log($"STARRT DRAINING FOR {animal}");
             // Drain over time
             if (drainOnStart && currentValue > 0)
             {
