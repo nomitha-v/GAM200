@@ -23,6 +23,8 @@ public class ButtonManager : MonoBehaviour
         //animalPanels[panelIndex].gameObject.SetActive(true);
         animalPanels[panelIndex].GetComponent<Canvas>().sortingOrder = 3;
 
+        SoundManager.PlaySound(SoundType.BUTTONS);
+
         switch (panelIndex)
         {
             case 0: //horse
@@ -40,6 +42,7 @@ public class ButtonManager : MonoBehaviour
 
         }
         backgrounds[activePanel].sprite = activeSprite;
+        
     }
     private void SetPanelsActive(bool state)
     {

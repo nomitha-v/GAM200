@@ -2684,7 +2684,7 @@ MonoBehaviour:
   bgmClips:
   - {fileID: 8300000, guid: 5676aee3f3cf15b448016e025e648d5c, type: 3}
   songIndex: 0
-  volume: 0.7
+  volume: 0.08
 --- !u!1 &129653784
 GameObject:
   m_ObjectHideFlags: 0
@@ -3924,7 +3924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164859367232666882, guid: f0639fcd43d6c49478deac5034b35afb, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Flamingo
       objectReference: {fileID: 0}
     - target: {fileID: 8164859367232666882, guid: f0639fcd43d6c49478deac5034b35afb, type: 3}
       propertyPath: alertHub
@@ -8889,7 +8889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164859367232666882, guid: f0639fcd43d6c49478deac5034b35afb, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Owl
       objectReference: {fileID: 0}
     - target: {fileID: 8164859367232666882, guid: f0639fcd43d6c49478deac5034b35afb, type: 3}
       propertyPath: alertHub
@@ -11463,7 +11463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 759888622284007524, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Owl
       objectReference: {fileID: 0}
     - target: {fileID: 759888622284007524, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
       propertyPath: alertHub
@@ -15304,7 +15304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4469493322945133194, guid: 969cfd68eced20e418c601942e2877ea, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Seal
       objectReference: {fileID: 0}
     - target: {fileID: 4469493322945133194, guid: 969cfd68eced20e418c601942e2877ea, type: 3}
       propertyPath: alertHub
@@ -15970,7 +15970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4469493322945133194, guid: 969cfd68eced20e418c601942e2877ea, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Owl
       objectReference: {fileID: 0}
     - target: {fileID: 4469493322945133194, guid: 969cfd68eced20e418c601942e2877ea, type: 3}
       propertyPath: alertHub
@@ -16107,7 +16107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 759888622284007524, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Flamingo
       objectReference: {fileID: 0}
     - target: {fileID: 759888622284007524, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
       propertyPath: alertHub
@@ -16816,7 +16816,7 @@ MonoBehaviour:
   flamingoClip: {fileID: 8300000, guid: 8091f27bac0530c40877b63ae50237fb, type: 3}
   sealClip: {fileID: 8300000, guid: 602171b790b0d24429f77666e4f3b770, type: 3}
   owlClip: {fileID: 8300000, guid: 856cbc373a2bc1345914eb1dca22ecbd, type: 3}
-  volume: 1
+  volume: 0.38
 --- !u!82 &1712210472
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18418,7 +18418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164859367232666882, guid: f0639fcd43d6c49478deac5034b35afb, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Seal
       objectReference: {fileID: 0}
     - target: {fileID: 8164859367232666882, guid: f0639fcd43d6c49478deac5034b35afb, type: 3}
       propertyPath: alertHub
@@ -18559,6 +18559,12 @@ MonoBehaviour:
   - name: DAYINCOMPLETE
     sounds:
     - {fileID: 8300000, guid: 124ecfcc5a33e214cbe0404a7ab4b272, type: 3}
+  - name: BUTTONS
+    sounds:
+    - {fileID: 8300000, guid: c195ef7db4eef194a9cc2a148484c281, type: 3}
+  - name: ALERT
+    sounds:
+    - {fileID: 8300000, guid: 1457eaf5a6523c94ca79f1fb1fb1b5d1, type: 3}
   audioSource: {fileID: 1840459245}
 --- !u!82 &1840459245
 AudioSource:
@@ -18690,7 +18696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 759888622284007524, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Seal
       objectReference: {fileID: 0}
     - target: {fileID: 759888622284007524, guid: 7ebb0bda5db81fc4db9d72f3adb73b7a, type: 3}
       propertyPath: alertHub
@@ -21358,7 +21364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4469493322945133194, guid: 969cfd68eced20e418c601942e2877ea, type: 3}
       propertyPath: animal
-      value: Horse
+      value: Flamingo
       objectReference: {fileID: 0}
     - target: {fileID: 4469493322945133194, guid: 969cfd68eced20e418c601942e2877ea, type: 3}
       propertyPath: alertHub
