@@ -17,9 +17,12 @@ public class ButtonManager : MonoBehaviour
     {
         activePanel = panelIndex;
 
-        SetPanelsActive(false);
+        //SetPanelsActive(false);
+        SetPanelSort(false);
 
-        animalPanels[panelIndex].gameObject.SetActive(true);
+        //animalPanels[panelIndex].gameObject.SetActive(true);
+        animalPanels[panelIndex].GetComponent<Canvas>().sortingOrder = 3;
+
         switch (panelIndex)
         {
             case 0: //horse
@@ -49,6 +52,23 @@ public class ButtonManager : MonoBehaviour
             }
             else
             {
+                backgrounds[i].sprite = inactiveSprite;
+            }
+        }
+    }
+
+    private void SetPanelSort(bool state)
+    {
+        for (int i = 0; i < animalPanels.Length; i++)
+        {
+            if (state == true)
+            {
+                animalPanels[i].GetComponent<Canvas>().sortingOrder = 3;
+                backgrounds[i].sprite = activeSprite;
+            }
+            else
+            {
+                animalPanels[i].GetComponent<Canvas>().sortingOrder = 2;
                 backgrounds[i].sprite = inactiveSprite;
             }
         }
