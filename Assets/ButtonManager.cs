@@ -23,7 +23,7 @@ public class ButtonManager : MonoBehaviour
         //animalPanels[panelIndex].gameObject.SetActive(true);
         animalPanels[panelIndex].GetComponent<Canvas>().sortingOrder = 3;
 
-        SoundManager.PlaySound(SoundType.BUTTONS);
+        SoundManager.PlaySound(SoundType.ENCLOSUREBUTTONS);
 
         switch (panelIndex)
         {

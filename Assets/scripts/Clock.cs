@@ -89,6 +89,7 @@ public class Clock : MonoBehaviour
         dieReason.text = string.Format("{0} starved to death.", animal);
         dieScreen.gameObject.SetActive(true);
         SoundManager.PlaySound(SoundType.DAYINCOMPLETE); //sound
+        ambianceController.StopMusic();
     }
     public void HealthDeath(string animal)
     {
@@ -97,6 +98,7 @@ public class Clock : MonoBehaviour
         dieReason.text = string.Format("{0} succumbed to an unknown illness", animal); ;
         dieScreen.gameObject.SetActive(true);
         SoundManager.PlaySound(SoundType.DAYINCOMPLETE); //sound
+        ambianceController.StopMusic();
     }
     public void SanityDeath(string animal)
     {
@@ -105,5 +107,7 @@ public class Clock : MonoBehaviour
         dieReason.text = string.Format("{0} was driven to insanity", animal);
         dieScreen.gameObject.SetActive(true);
         SoundManager.PlaySound(SoundType.DAYINCOMPLETE); //sound
+        ambianceController.StopMusic();
+
     }
 }
