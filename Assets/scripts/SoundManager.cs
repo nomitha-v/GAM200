@@ -5,7 +5,7 @@ public enum SoundType //sfx
     DAYSTART,
     DAYCOMPLETE,
     DAYINCOMPLETE,
-    BUTTONS,
+    ENCLOSUREBUTTONS,
     ALERT
 }
 
